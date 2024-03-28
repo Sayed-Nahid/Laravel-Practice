@@ -1,15 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SuperController;
 
-
-Route::get('/', function(){
-    return view('home');
-});
-
-Route::get('/about', function(){
-    return view('about');
-});
- Route::get('/contact', function(){
-    return view('contact');
- });
+Route::get('/', [SuperController::class, 'index']);
+Route::get('/about', [SuperController::class, 'about']);
+Route::get('/contact', [SuperController::class, 'contact']);
